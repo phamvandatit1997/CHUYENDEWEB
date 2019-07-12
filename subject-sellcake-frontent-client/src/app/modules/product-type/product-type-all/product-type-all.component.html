@@ -1,0 +1,39 @@
+<div class="beta-products-list">
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let product of products">
+      <div class="single-item">
+        <div class="ribbon-wrapper" *ngIf="product.promotionPrice != 0">
+          <div class="ribbon sale">{{translateService.data.sale}}</div>
+        </div>
+        <div class="single-item-header">
+          <a [routerLink]="['/cake/product-detail/' + product.productId]">
+            <img src="{{product.images}}" class="images-product">
+          </a>
+        </div>
+        <div class="single-item-body">
+          <p class="single-item-title">{{product.productName}}</p>
+          <p class="single-item-price" *ngIf="product.promotionPrice != 0">
+            <span class="flash-del">{{product.unitPrice}} VND</span>
+            <span class="flash-sale">{{product.promotionPrice}} VND</span>
+          </p>
+          <p class="single-item-price" *ngIf="product.promotionPrice == 0">
+            <span class="flash-sale">{{product.unitPrice}} VND</span>
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <a class="btn btn-primary" [routerLink]="['/cake/product-detail/' + product.productId]">{{translateService.data.detail}}<i class="fa fa-chevron-right"></i></a>
+            <a class="btn btn-success" style="margin-left: 10px" (click)="addCart(product.productId)">{{translateService.data.more_products}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12 text-center" style="margin-bottom: -75px">
+      <ngb-pagination [collectionSize]="collectionSize" [pageSize]="pagingRequest.pageSize"
+                      [(page)]="pagingRequest.pageNumber" (pageChange)="getListProduct()"
+                      aria-label="Default pagination"
+                      class="pagination-flat pagination-primary pull-right">
+      </ngb-pagination>
+    </div>
+  </div>
+</div>

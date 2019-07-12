@@ -1,0 +1,286 @@
+{
+  "title": "Bán bánh",
+  "placeholder": {
+    "search": "Tìm kiếm",
+    "login": {
+      "email": "Nhập tên email",
+      "password": "Nhập mật khẩu"
+    },
+    "product": {
+      "name": "Nhập tên bánh",
+      "unit": "Nhập cách thức của bánh",
+      "unit_price": "Nhập giá bánh",
+      "promotion_price": "Nhập giảm giám cho bánh",
+      "description": "Thông tin chi tiết"
+    },
+    "product_type": {
+      "name": "Nhập tên loại bánh",
+      "description": "Nhập thông tin chi tiết"
+    },
+    "user": {
+      "first_name": "Nhập họ",
+      "username": "Nhập tên người dùng",
+      "email": "Nhập địa chỉ email",
+      "phone": "Nhập số điện thoại",
+      "birthday": "Nhập ngày sinh",
+      "last_name": "Nhập tên",
+      "address": "Nhập địa chỉ người dùng",
+      "password": "Nhập mật khẩu",
+      "vi": "Tiếng Việt",
+      "en": "Tiếng Anh"
+    }
+  },
+  "error": {
+    "login": {
+      "email_required": "*Bạn chưa nhập email!",
+      "email_validate": "*Email không đúng định dạng!",
+      "password_required": "*Bạn chưa nhập password!",
+      "password_min_length": "*Password phải từ 6 ký tự trở lên!"
+    },
+    "product": {
+      "name_required": "*Tên bánh không được để trống!",
+      "unit_required": "*Cách thức của bánh không được để trống!",
+      "product_type_required": "*Vui lòng loại bánh!",
+      "unit_price_required": "*Giá bánh không được để trống!",
+      "promotion_price_required": "*Giá khuyến mãi không được để trống!",
+      "description_required": "*Chi tiết sản không được để trống!"
+    },
+    "product_type": {
+      "name_required": "*Tên loại bánh không được để trống!",
+      "description_required": "*Chi tiết loại bánh không được để trống!"
+    },
+    "user": {
+      "first_name_required": "*Họ không được để trống!",
+      "username_required": "*Tên người dùng không được để trống!",
+      "email_required": "*Email không được để trống!",
+      "email_validate": "*Email không đúng định dạng!",
+      "phone_required": "*Số điện thoại không được để trống!",
+      "birthday_required": "*Ngày sinh không được để trống!",
+      "last_name_required": "*Tên không được để trống!",
+      "address_required": "*Địa chỉ không được để trống!",
+      "password_required": "*Mật khẩu không được để trống!",
+      "password_min_length": "*Mật khẩu phải 6 ký tự trở lên!"
+    }
+  },
+  "button": {
+    "login": "Đăng nhập",
+    "remember_me": "Ghi nhớ",
+    "logout": "Đăng xuất",
+    "close": "Đóng",
+    "add": "Thêm",
+    "save": "Lưu",
+    "back": "Trở lại",
+    "change": "Thay đổi",
+    "delete": "Xóa",
+    "export": "Excel",
+    "print": "In hóa đơn"
+  },
+  "label": {
+    "forgot_password": "Quên mật khẩu"
+  },
+  "menu": {
+    "statistics": "Số liệu thống kê",
+    "manager_customer": "Quản lý khách hàng",
+    "manager_type_bakary": "Quản lý loại bánh",
+    "manager_cake": "Quản lý bánh",
+    "slider": "Slider",
+    "manager_user": "Quản lý người dùng",
+    "bill": "Hóa Đơn"
+  },
+  "table": {
+    "label": {
+      "title": "DANH SÁCH KHÁCH HÀNG"
+    },
+    "bill_detail": "CHI TIẾT HÓA ĐƠN"
+  },
+  "search": "Tìm kiếm",
+  "change_status": "Thay đổi trạng thái thành công",
+  "change_lang": "Thay đổi ngôn ngữ thành công",
+  "created_date": "Ngày tạo",
+  "updated_date": "Ngày cập nhật",
+  "login_successfully": "Đăng nhập hệ thống thành công",
+  "user": {
+    "successfuly": "Người dùng tạo thành công",
+    "list": {
+      "title": "DANH SÁCH NGƯỜI DÙNG",
+      "fullname": "Họ và tên",
+      "username": "Tên người dùng",
+      "email": "Email",
+      "dob": "Ngày sinh",
+      "address": "Địa chỉ",
+      "phone": "Số điện thoại",
+      "date_create": "Ngày tạo",
+      "status": "Trạng thái",
+      "action": "Thao tác"
+    },
+    "create": {
+      "title": "THÊM NGƯỜI DÙNG",
+      "first_name": "Họ",
+      "username": "Tên người dùng",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "birthday": "Ngày sinh",
+      "last_name": "Tên",
+      "address": "Địa chỉ",
+      "password": "Mật khẩu",
+      "lang": "Ngôn ngữ",
+      "choose_image": "Chọn ảnh"
+    },
+    "information": {
+      "title_user": "Thông tin người dùng",
+      "title_personal": "Thông tin cá nhân",
+      "title_contact": "Thông tin liên hệ",
+      "name": "Tên người dùng",
+      "first_name": "Họ",
+      "last_name": "Tên",
+      "gender": "Giới tính",
+      "dob": "Ngày sinh",
+      "email": "Email",
+      "address": "Địa chỉ",
+      "phone": "Số điện thoại",
+      "date_create": "Ngày tạo",
+      "status": "Trạng thái",
+      "action": "Thao tác"
+    }
+  },
+  "product": {
+    "product_create_successfuly": "Tạo sản phẩm thành công",
+    "update_successfully": "Sửa sản phẩm thành công",
+    "add": {
+      "title": "THÊM BÁNH",
+      "name": "Tên bánh",
+      "unit": "Đơn vị",
+      "image": "Hình ảnh",
+      "product_type": "Loại bánh",
+      "select_image": "Chọn ảnh",
+      "unit_price": "Giá bán",
+      "promotion_price": "Giảm giá",
+      "description": "Thông tin chi tiết"
+    },
+    "edit": {
+      "title": "CHI TIẾT BÁNH",
+      "name": "Tên bánh",
+      "unit": "Đơn vị",
+      "image": "Hình ảnh",
+      "product_type": "Loại bánh",
+      "select_image": "Chọn ảnh",
+      "unit_price": "Giá bán",
+      "promotion_price": "Giảm giá",
+      "description": "Thông tin chi tiết"
+    },
+    "list": {
+      "title": "DANH SÁCH BÁNH",
+      "name": "Tên bánh",
+      "unit": "Đơn giá",
+      "promotion_price": "Giá khuyến mãi",
+      "status": "Trạng thái",
+      "image": "Hình ảnh",
+      "action": "Thao tác"
+    }
+  },
+  "product_type": {
+    "create_successfuly": "Tạo loại sản phẩm thành công",
+    "create": {
+      "title_create": "THÊM THÔNG TIN LOẠI BÁNH",
+      "product_type_name": "Tên loại bánh",
+      "description": "Chi tiết loại bánh",
+      "images": "Hình ảnh",
+      "select_image": "Chọn ảnh"
+    },
+    "edit": {
+      "title_create": "SỬA LOẠI BÁNH",
+      "product_type_name": "Tên loại bánh",
+      "description": "Chi tiết loại bánh",
+      "images": "Hình ảnh",
+      "select_image": "Chọn ảnh"
+    },
+    "list": {
+      "title": "DANH SÁCH LOẠI BÁNH",
+      "name": "Tên loại bánh",
+      "image": "Hình ảnh",
+      "status": "Trạng thái",
+      "action": "Thao tác",
+      "description": "Chi tiết loại bánh"
+    }
+  },
+  "bill": {
+    "create_successfuly": "Tạo hóa đơn thành công",
+    "list": {
+      "title": "DANH SÁCH HÓA ĐƠN",
+      "ordinal_numbers": "STT",
+      "date_order": "Ngày đặt hàng",
+      "date_ship": "Ngày giao hàng",
+      "total": "Tổng tiền",
+      "payment": "Hình thức thanh toán",
+      "credit_card": "Thẻ",
+      "cash": "Tiền mặt",
+      "note": "Ghi chú",
+      "status": "Trạng thái",
+      "action": "Thao tác"
+    },
+    "detail": {
+      "customer_name": "Tên khách hàng",
+      "customer_address": "Địa chỉ khách hàng",
+      "customer_birthday": "Ngày sinh",
+      "create_at": "Ngày tạo",
+      "customer_info": "Thông tin khách hàng",
+      "customer_email": "Email",
+      "customer_phone": "Số điện thoại",
+      "bill_title": "Thông tin hóa đơn",
+      "bill_id": "Mã hóa đơn",
+      "payment": "Hình thức thanh toán",
+      "account": "Tài khoản",
+      "ordinal_numbers": "STT",
+      "product_name": "Tên sản phẩm",
+      "product_type": "Loại sản phẩm",
+      "quantity": "Số lượng",
+      "unit_price": "Giá",
+      "amount_date": "Ngày thanh toán",
+      "ship_date": "Ngày chuyển",
+      "total_price": "Tổng tiền"
+    }
+  },
+  "customer": {
+    "list": {
+      "title": "Danh sách khách hàng",
+      "name": "Tên khách hàng",
+      "gender": "Giới tính",
+      "dob": "Ngày sinh",
+      "email": "Email",
+      "address": "Địa chỉ",
+      "phone": "Số điện thoại",
+      "status": "Trạng thái",
+      "action": "Thao tác"
+    },
+    "information": {
+      "title_customer": "Thông tin khách hàng",
+      "title_personal": "Thông tin cá nhân",
+      "title_contact": "Thông tin liên hệ",
+      "name": "Tên khách hàng",
+      "first_name": "Họ",
+      "last_name": "Tên",
+      "gender": "Giới tính",
+      "dob": "Ngày sinh",
+      "email": "Email",
+      "address": "Địa chỉ",
+      "phone": "Số điện thoại",
+      "date_create": "Ngày tạo",
+      "status": "Trạng thái",
+      "action": "Thao tác"
+    }
+  },
+  "slider": {
+    "list": {
+      "title": "DANH SÁCH SLIDER",
+      "image": "Hình ảnh",
+      "date_create": "Ngày tạo",
+      "date_update": "Ngày sửa",
+      "status": "Trạng thái",
+      "action": "Thao tác"
+    },
+    "create":{
+      "title": "THÊM SLIDER",
+      "choose_image": "Chọn ảnh"
+    }
+  }
+}

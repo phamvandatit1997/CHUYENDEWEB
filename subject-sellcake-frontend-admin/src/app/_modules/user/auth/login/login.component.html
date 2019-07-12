@@ -1,0 +1,29 @@
+<body>
+<form #f="ngForm" class="box">
+  <h1> Login</h1>
+  <div class="form-login">
+    <input class="form-input" placeholder="{{translate.data.placeholder.login.email}}" name="email" #email="ngModel"
+           [(ngModel)]="userLogin.email" type="text" autofocus [required]="true" [pattern]="emailPattent">
+  </div>
+  <div *ngIf="email.touched">
+    <span class="help-block" style="color: #bd2130;"
+          *ngIf="email.value === ''">{{translate.data.error.login.email_required}}</span>
+    <span class="help-block" style="color: #bd2130;"
+          *ngIf="email.errors?.pattern">{{translate.data.error.login.email_validate}}</span>
+  </div>
+  <div class="form-login">
+    <input class="form-input" placeholder="{{translate.data.placeholder.login.password}}" name="password"
+           #password="ngModel"
+           [(ngModel)]="userLogin.password" type="password" autofocus required="required" [minlength]="6">
+  </div>
+  <div *ngIf="password.touched">
+    <span class="help-block" style="color: #bd2130;"
+          *ngIf="password.value === ''">{{translate.data.error.login.password_required}}</span>
+    <span class="help-block" style="color: #bd2130;"
+          *ngIf="password.value.length > 0 && password.value.length < 6">{{translate.data.error.login.password_min_length}}</span>
+  </div>
+  <div class="form-login">
+    <button class="btn-submit" [disabled]="f.invalid" (click)="loginUser()">Login</button>
+  </div>
+</form>
+</body>

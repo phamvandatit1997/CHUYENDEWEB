@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">{{translate.data.slider.list.title}}</h1>
+    <div class="form-group">
+      <button class="btn btn-success" [routerLink]="['/admin/sldier/create']" style="margin-right: 5px">{{translate.data.button.add}}</button>
+    </div>
+    <div class="form-group row">
+      <div class="input-group col-4 search pull-right">
+        <input type="text" class="form-control" placeholder="{{translate.data.placeholder.search}}"
+               [(ngModel)]="pagingRequest.searchKey" (keyup)="getListSlider()"
+               aria-label="Search" aria-describedby="colored-addon2">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+          <thead>
+          <tr>
+            <th class="text-center" style="width: 10%">{{translate.data.slider.list.image}}</th>
+            <th >{{translate.data.slider.list.date_create}}</th>
+            <th >{{translate.data.slider.list.date_update}}</th>
+            <th class="text-center">{{translate.data.slider.list.status}}</th>
+            <th class="text-center">{{translate.data.slider.list.action}}</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let slider of sliders; ">
+          <tr>
+            <td><img src="{{slider.slideLinks}}" style="width: 100px;height: 100px"></td>
+            <td>{{slider.createDate|date: 'dd-MM-yyyy'}}</td>
+            <td>{{slider.lastActivity| date: 'dd-MM-yyyy'}}</td>
+            <td *ngIf="slider.status ===1" class="text-center">
+              <button class="btn btn-success btn-action btn-circle btn-lg">
+                <i class="fa fa-check" aria-hidden="true"></i></button>
+            </td>
+            <td *ngIf="slider.status === 0  " class="text-center">
+              <button class="btn btn-danger btn-action btn-circle btn-lg">
+                <i class="fa fa-ban" aria-hidden="true"></i></button>
+            </td>
+            <td *ngIf="slider.status === 1" class="text-center">
+              <button class="btn btn-danger btn-action btn-circle btn-lg" (click)="changeStatusSlider(slider.slideId)">
+                <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            </td>
+            <td *ngIf="slider.status === 0" class="text-center">
+              <button class="btn btn-success btn-action btn-circle btn-lg" (click)="changeStatusSlider(slider.slideId)">
+                <i class="fa fa-key x" aria-hidden="true"></i></button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="col-lg-12 text-right" style="margin-top: 30px">
+          <ngb-pagination [collectionSize]="collectionSize" [pageSize]="pagingRequest.pageSize"
+                          [(page)]="pagingRequest.pageNumber" (pageChange)="getListSlider()"
+                          aria-label="Default pagination"
+                          class="pagination-flat pagination-primary pull-right">
+          </ngb-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

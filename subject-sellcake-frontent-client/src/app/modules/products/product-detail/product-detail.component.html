@@ -1,0 +1,99 @@
+<div class="container">
+  <div id="content">
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="ribbon-wrapper" *ngIf="product.promotionPrice != 0">
+              <div class="ribbon sale">{{translateService.data.sale}}</div>
+            </div>
+            <div class="single-item-header">
+                <img src="{{product.images}}">
+            </div>
+            <div class="single-item-caption">
+              <button class="btn btn-success form-control" (click)="addCart(product.productId)">{{translateService.data.more_products}}</button>
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <div class="single-item-body">
+              <p class="single-item-title">{{product.productName}}</p>
+              <p class="single-item-price" *ngIf="product.promotionPrice != 0">
+                <span>{{translateService.data.price}}: {{product.promotionPrice}} VND</span>
+              </p>
+              <p class="single-item-price" *ngIf="product.promotionPrice == 0">
+                <span>{{translateService.data.price}}: {{product.unitPrice}} VND</span>
+              </p>
+              <p class="single-item-price">
+                <span>{{translateService.data.unit}}: {{product.unit}}</span>
+              </p>
+            </div>
+            <div class="single-item-desc">
+              <p>{{product.description}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space50">&nbsp;</div>
+        <div class="beta-products-list">
+          <h4 class="title-product">{{translateService.data.related_products}}</h4>
+
+          <div class="row">
+            <div class="col-sm-4" *ngFor="let products of products">
+              <div class="single-item">
+                <div class="ribbon-wrapper" *ngIf="products.promotionPrice != 0">
+                  <div class="ribbon sale">{{translateService.data.sale}}</div>
+                </div>
+                <div class="single-item-header">
+                  <a [routerLink]="['/cake/product-detail/' + products.productId]">
+                    <img src="{{products.images}}" class="images-product">
+                  </a>
+                </div>
+                <div class="single-item-body">
+                  <p class="single-item-title">{{products.productName}}</p>
+                  <p class="single-item-price" *ngIf="products.promotionPrice != 0">
+                    <span class="flash-del">{{products.unitPrice}} VND</span>
+                    <span class="flash-sale">{{products.promotionPrice}} VND</span>
+                  </p>
+                  <p class="single-item-price" *ngIf="products.promotionPrice == 0">
+                    <span class="flash-sale">{{products.unitPrice}} VND</span>
+                  </p>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <a class="btn btn-primary" [routerLink]="['/cake/product-detail/' + product.productId]">{{translateService.data.detail}}<i class="fa fa-chevron-right"></i></a>
+                    <a class="btn btn-success" style="margin-left: 10px" (click)="addCart(product.productId)">{{translateService.data.more_products}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 aside">
+        <div class="widget">
+          <h3 class="widget-title">{{translateService.data.product}}</h3>
+          <div class="widget-body">
+            <div class="beta-sales beta-lists">
+              <div class="media beta-sales-item" *ngFor="let listproduct of listProducts">
+                <a class="pull-left" [routerLink]="['/cake/product-detail/' + listproduct.productId]">
+                  <img src="{{listproduct.images}}" class="images-item">
+                </a>
+                <div class="media-body">
+                  <a [routerLink]="['/cake/product-detail/' + listproduct.productId]">
+                    {{listproduct.productName}}
+                  </a>
+                  <p class="single-item-price" *ngIf="listproduct.promotionPrice != 0">
+                    <span class="beta-sales-price">{{listproduct.promotionPrice}} VND</span>
+                  </p>
+                  <p class="single-item-price" *ngIf="listproduct.promotionPrice == 0">
+                    <span class="beta-sales-price">{{listproduct.unitPrice}} VND</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

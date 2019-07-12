@@ -1,0 +1,67 @@
+<div id="header">
+  <div class="header-body" style="background:#339966">
+    <div class="container beta-relative">
+      <div class="pull-left">
+        <img src="/assets/dest/images/logo.png" style="height: 90px;width: 260px">
+      </div>
+      <div class="pull-right auto-width-right" style="margin-bottom: 5px; margin-top: 25px">
+        <div class="dropdown beta-comp">
+          <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+            {{translateService.data.cart}}(<span *ngIf="carResponse.numberProduct === 0">{{translateService.data.empty}}</span><span *ngIf="carResponse.numberProduct !== 0">{{carResponse.numberProduct}}</span>)
+            <span class="caret"></span></button>
+              <div class="dropdown-menu" style="width: 545px; margin-left: -140px">
+                <div class="cart-item" *ngFor="let cart of carts" style="margin-left: 15px">
+                  <div class="media">
+                    <div class="pull-left">
+                      <img src="{{cart.imageProduct}}">
+                    </div>
+                    <div class="media-body">
+                      <span class="cart-item-title">{{cart.productName}}</span>
+                      <span class="cart-item-amount">{{translateService.data.unit_price}}: <span class="cart-total-value" style="margin-right: 5px">{{cart.price}}VND </span> {{translateService.data.amount}}: <span class="cart-total-value" style="margin-right: 5px">{{cart.quantity}}</span> {{translateService.data.unit_price}}: <span class="cart-total-value" style="margin-right: 5px">{{cart.sumPrice}}VND</span><i class="fa fa-times-circle" *ngIf="cart.quantity > 1" style="margin-right: 5px;cursor: pointer" (click)="deleteOneProductInCart(cart.productId)"></i><i class="fa fa-trash-o" style="cursor: pointer" (click)="deleteAllProductInCart(cart.productId)"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-caption" style="margin-left: 15px">
+                  <div class="cart-total text-left">{{translateService.data.total_money}}: <span class="cart-total-value" style="margin-right: 5px">{{carResponse.sumPrice}} VND</span> {{translateService.data.amount}}: <span class="cart-total-value">{{carResponse.numberProduct}}</span></div>
+                  <div class="clearfix"></div>
+                  <div class="center">
+                    <div class="space10">&nbsp;</div>
+                    <a class="beta-btn primary text-center" (click)="createBill()">{{translateService.data.order}} <i class="fa fa-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="dropdown beta-comp" *ngIf="!show" style="margin-left: 5px">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{customer.customerName}}
+            <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a [routerLink]="['/cake/bill/detail']">{{translateService.data.invoice_details}}</a></li>
+            <li><a>{{translateService.data.customer_information}}</a></li>
+          </ul>
+        </div>
+        <div class="beta-comp" style="margin-left: 5px">
+            <button class="btn btn-success" *ngIf="show" [routerLink]="['/cake/customer/register']"><i class="fa fa-plus-circle"></i> {{translateService.data.registration}}</button>
+            <button class="btn btn-primary" *ngIf="show" [routerLink]="['/cake/customer/login']" style="margin-left: 5px"><i class="fa fa-power-off"></i> {{translateService.data.login_button}}</button>
+            <button class="btn btn-danger" *ngIf="!show" (click)="logoutCustomer()"><i class="fa fa-arrow-circle-right"></i> {{translateService.data.logout}}</button>
+        </div>
+        <div class="beta-comp">
+            <img src="/assets/dest/images/vi.png" class="logo_lang" (click)="changeLang('vi')">
+            <img src="/assets/dest/images/en.png" class="logo_lang" (click)="changeLang('en')">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-bottom" style="background:#339966">
+    <div class="container">
+      <nav class="main-menu">
+        <ul class="l-inline ov">
+          <li><a [routerLink]="['/cake/home']">{{translateService.data.home_page}}</a></li>
+          <li><a [routerLink]="['/cake/product-type/all']">{{translateService.data.product}}</a></li>
+          <li><a href="#">{{translateService.data.introduce}}</a></li>
+          <li><a href="#">{{translateService.data.contact}}</a></li>
+        </ul>
+        <div class="clearfix"></div>
+      </nav>
+    </div>
+  </div>
+</div>

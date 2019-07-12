@@ -1,0 +1,47 @@
+<div class="container">
+  <div id="content">
+    <form #f="ngForm">
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <h4 class="title-product">Đăng nhập</h4>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                <button class="btn btn-primary form-control"><i class="fa fa-facebook"></i>  Facebook</button>
+              </div>
+              <div class="col-sm-6">
+                <button class="btn btn-danger form-control"><i class="fa fa-google-plus"></i>  Google</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="title-label">Email</label>
+            <input type="text" class="form-control" placeholder="Enter email" name="email" #email="ngModel" [(ngModel)]="customerLoginInfo.email" autofocus [pattern]="emailPattent" [required]="true">
+            <div *ngIf="email.touched">
+                <span class="help-block" *ngIf="email.value === ''">Trường này không được bỏ trống.</span>
+                <span class="help-block" *ngIf="email.errors?.pattern">Email invalidate</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="title-label">Password</label>
+            <input type="password" class="form-control" placeholder="Enter password" name="password" #password="ngModel" [(ngModel)]="customerLoginInfo.password" autofocus [required]="true">
+            <div *ngIf="password.touched">
+                <span class="help-block" *ngIf="password.value === ''">Trường này không được bỏ trống.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <a [routerLink]="['/cake/customer/register']">Chưa có tài khoản???</a>
+          </div>
+          <div class="form-group">
+            <button type="submit" [disabled]="f.invalid" (click)="customerLogins()" class="btn btn-primary pull-right">Đăng nhập</button>
+          </div>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+    </form>
+  </div>
+</div>

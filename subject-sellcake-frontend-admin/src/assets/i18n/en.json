@@ -1,0 +1,284 @@
+{
+  "title": "Sell cake",
+  "placeholder": {
+    "search": "Search",
+    "login": {
+      "email": "Enter email",
+      "password": "Enter password"
+    },
+    "product": {
+      "name": "Enter name cake",
+      "unit": "Enter unit of cake",
+      "unit_price": "Enter unit price",
+      "promotion_price": "Enter promotion price",
+      "description": "Enter description"
+    },
+    "product_type": {
+      "name": "Enter type cake",
+      "description": "Enter description"
+    },
+    "user": {
+      "first_name": "Enter first name",
+      "username": "Enter user name",
+      "email": "Enter email",
+      "phone": "Enter phone",
+      "birthday": "Enter birthday",
+      "last_name": "Enter last name",
+      "address": "Enter address",
+      "password": "Enter password",
+      "vi": "Vietnamese",
+      "en": "English"
+    }
+  },
+  "error": {
+    "login": {
+      "email_required": "*Email is required!",
+      "email_validate": "*Email incorrect!",
+      "password_required": "*Password required!",
+      "password_min_length": "*Password must be 6 characters or more!"
+    },
+    "product": {
+      "name_required": "*Name is required!",
+      "unit_required": "*Unit is required!",
+      "product_type_required": "*Type cake is required!",
+      "unit_price_required": "*Unit price is required!",
+      "promotion_price_required": "*Promotion price is required!",
+      "description_required": "*Description is required!"
+    },
+    "product_type": {
+      "name_required": "*Type cake is required!",
+      "description_required": "*Description is required!"
+    },
+    "user": {
+      "first_name_required": "*First name is required!",
+      "username_required": "*User name is required!",
+      "email_required": "*Email is required!",
+      "email_validate": "*Email incorrect!",
+      "phone_required": "*Phone is required!",
+      "birthday_required": "*Birthday is required!",
+      "last_name_required": "*Last name is required!",
+      "address_required": "*Address is required!",
+      "password_required": "*Password is required!",
+      "password_min_length": "*Password must be 6 characters or more!"
+    }
+  },
+  "button": {
+    "login": "Login",
+    "remember_me": "Remember",
+    "logout": "Logout",
+    "close": "Close",
+    "add": "Add",
+    "save": "Save",
+    "back": "Back",
+    "change": "Change",
+    "delete": "Delete",
+    "export": "Excel",
+    "print": "Print Bill"
+  },
+  "label": {
+    "forgot_password": "Forgot password"
+  },
+  "menu": {
+    "statistics": "Statistics",
+    "manager_customer": "Management customer",
+    "manager_type_bakary": "Management type cake",
+    "manager_cake": "Management cake",
+    "slider": "Slider",
+    "manager_user": "Management user",
+    "bill": "Bill"
+  },
+  "table": {
+    "label": {
+      "title": "LIST CUSTOMER"
+    },
+    "bill_detail": "BILL DETAIL"
+  },
+  "search": "Search",
+  "change_status": "Change status success",
+  "change_lang": "Change language success",
+  "created_date": "Date created",
+  "updated_date": "Date updated",
+  "login_successfully": "Login successfully!",
+  "user": {
+    "successfuly": "Created user successfully!",
+    "list": {
+      "title": "LIST USER",
+      "fullname": "Full name",
+      "username": "Username",
+      "email": "Email",
+      "dob": "Date of birth",
+      "address": "Address",
+      "phone": "Phone",
+      "date_create": "Date created",
+      "status": "Status",
+      "action": "Action"
+    },
+    "create": {
+      "title": "ADD USER",
+      "first_name": "First name",
+      "username": "User name",
+      "email": "Email",
+      "phone": "Phone number",
+      "birthday": "Birthday",
+      "last_name": "Last name",
+      "address": "Address",
+      "password": "Password",
+      "lang": "Language",
+      "choose_image": "Choose image"
+    },
+    "information": {
+      "title_user": "USER INFORMATION",
+      "title_personal": "Personal information",
+      "title_contact": "Contact information",
+      "name": "Name",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "gender": "Gender",
+      "dob": "Date of birth",
+      "email": "Email",
+      "address": "Address",
+      "phone": "Phone",
+      "date_create": "Date created",
+      "status": "Status",
+      "action": "Action"
+    }
+  },
+  "product": {
+    "product_create_successfuly": "Created product successfully!",
+    "update_successfully": "Update product successfully",
+    "add": {
+      "title": "ADD CAKE",
+      "name": "Name",
+      "unit": "Unit",
+      "image": "Image",
+      "product_type": "Type cake",
+      "select_image": "Choose image",
+      "unit_price": "Unit price",
+      "promotion_price": "Promotion price",
+      "description": "Description"
+    },
+    "edit": {
+      "title": "EDIT CAKE",
+      "name": "Name",
+      "unit": "Unit",
+      "image": "Image",
+      "product_type": "Type cake",
+      "select_image": "Choose image",
+      "unit_price": "Unit price",
+      "promotion_price": "Promotion price",
+      "description": "Description"
+    },
+    "list": {
+      "title": "LIST CAKE",
+      "name": "Name",
+      "unit": "Unit",
+      "promotion_price": "Promotion price",
+      "status": "Status",
+      "image": "Image",
+      "action": "Action"
+    }
+  },
+  "product_type": {
+    "create_successfuly": "Created type cake successfully!",
+    "create": {
+      "title_create": "ADD TYPE CAKE",
+      "product_type_name": "Type cake",
+      "description": "Description",
+      "images": "Image",
+      "select_image": "Choose image"
+    },
+    "edit": {
+      "title_create": "EDIT TYPE CAKE",
+      "product_type_name": "Type cake",
+      "description": "Description",
+      "images": "Image",
+      "select_image": "Choose image"
+    },
+    "list": {
+      "title": "LIST TYPE CAKE",
+      "name": "Name",
+      "status": "Status",
+      "image": "Image",
+      "action": "Action",
+      "description": "Details of cakes"
+    }
+  },
+  "bill": {
+    "create_successfuly": "Created bill successfully!",
+    "list": {
+      "title": "LIST BILL",
+      "ordinal_numbers" : "#",
+      "date_order": "Date ordered",
+      "date_ship": "Date ship",
+      "total": "Total",
+      "payment": "Payment",
+      "note": "Note",
+      "status": "Status",
+      "action": "Action"
+    },
+    "detail": {
+      "customer_name": "Name",
+      "customer_address": "Address",
+      "customer_birthday": "Birthday",
+      "create_at": "Date created",
+      "customer_info": "Customer information",
+      "customer_email": "Email",
+      "customer_phone": "Phone",
+      "bill_title": "Bill information",
+      "bill_id": "Bill id",
+      "account": "Account",
+      "ordinal_numbers" : "#",
+      "payment": "Payment",
+      "product_name": "Cake name",
+      "product_type": "Type cake name",
+      "quantity": "Quantity",
+      "unit_price": "Unit price",
+      "amount_date": "Date amount",
+      "ship_date": "Date ship",
+      "total_price": "Total price"
+    }
+  },
+  "customer": {
+    "list": {
+      "title": "LIST CUSTOMER",
+      "name": "Name",
+      "gender": "Gender",
+      "dob": "Birthday",
+      "email": "Email",
+      "address": "Address",
+      "phone": "Phone",
+      "status": "Status",
+      "action": "Action"
+    },
+    "information": {
+      "title_customer": "CUSTOMER INFORMATION",
+      "title_personal": "Personal information",
+      "title_contact": "Contact information",
+      "name": "Name",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "gender": "Gender",
+      "dob": "Birthday",
+      "email": "Email",
+      "address": "Address",
+      "phone": "Phone",
+      "date_create": "Date created",
+      "status": "Status",
+      "action": "Action"
+    }
+  },
+  "slider": {
+    "list": {
+      "title": "LIST SLIDER",
+      "image": "Image",
+      "date_create": "Date created",
+      "date_update": "Date updated",
+      "status": "Status",
+      "action": "Action"
+    },
+    "create":{
+      "title": "ADD SLIDER",
+      "choose_image": "Choose image"
+    }
+  }
+}

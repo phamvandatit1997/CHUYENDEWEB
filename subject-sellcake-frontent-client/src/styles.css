@@ -1,0 +1,19 @@
+.flash-del{
+  margin-right: 10px;
+  text-decoration:line-through;
+  color: red;
+}
+.flash-sale {
+  margin-right: 10px;
+  color: #0d17ff;
+}
+.images-product{
+  width: 262px;
+  height: 160px;
+}
+.title-product{
+  margin-bottom: 15px;
+}
+.option {
+  margin-bottom: 5px;
+}

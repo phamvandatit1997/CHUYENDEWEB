@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">{{translate.data.product.list.title}}</h1>
+    <div class="form-group">
+      <button class="btn btn-success" [routerLink]="['/admin/product/create']"
+              style="margin-right: 5px">{{translate.data.button.add}}</button>
+    </div>
+    <div class="form-group row">
+      <div class="input-group col-4 search">
+        <input type="text" class="form-control" placeholder="{{translate.data.placeholder.search}}"
+               [(ngModel)]="pagingRequest.searchKey" (keyup)="getListProduct()"
+               aria-label="Search" aria-describedby="colored-addon2">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+          <thead>
+          <tr>
+            <th><input type="checkbox"></th>
+            <th>{{translate.data.product.list.name}}</th>
+            <th class="text-center">{{translate.data.product.list.unit}}(VND)</th>
+            <th class="text-center">{{translate.data.product.list.promotion_price}}(VND)</th>
+            <th class="text-center">{{translate.data.product.list.status}}</th>
+            <th class="text-center" style="width: 10%">{{translate.data.product.list.image}}</th>
+            <th class="text-center">{{translate.data.product.list.action}}</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let product of products">
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>{{product.productName}}</td>
+            <td class="text-center">{{product.unitPrice}} VND</td>
+            <td class="text-center">{{product.promotionPrice}} VND</td>
+            <td *ngIf="product.status ===1" class="text-center">
+
+              <button class="btn btn-success btn-action btn-circle btn-lg">
+                <i class="fa fa-check" aria-hidden="true"></i></button>
+            </td>
+            <td *ngIf="product.status === 0  " class="text-center">
+              <button class="btn btn-danger btn-action btn-circle btn-lg">
+                <i class="fa fa-ban" aria-hidden="true"></i></button>
+            </td>
+            <td><img src="{{product.images}}" style="width: 100px;height: 100px"></td>
+            <td *ngIf="product.status === 1" class="text-center">
+              <button class="btn btn-info btn-action btn-circle btn-lg "
+                      [routerLink]="['/admin/product/' + product.productId]"><i class="fa fa-info-circle"></i>
+              </button>
+              <button class="btn btn-danger btn-action btn-circle btn-lg"
+                      (click)="changeProductStatus(product.productId)">
+                <i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            </td>
+            <td *ngIf="product.status === 0" class="text-center">
+              <button class="btn btn-success btn-action btn-circle btn-lg"
+                      (click)="changeProductStatus(product.productId)">
+                <i class="fa fa-key x" aria-hidden="true"></i></button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="col-lg-12 text-right" style="margin-top: 30px">
+          <ngb-pagination [collectionSize]="collectionSize" [pageSize]="pagingRequest.pageSize"
+                          [(page)]="pagingRequest.pageNumber" (pageChange)="getListProduct()"
+                          aria-label="Default pagination"
+                          class="pagination-flat pagination-primary pull-right">
+          </ngb-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

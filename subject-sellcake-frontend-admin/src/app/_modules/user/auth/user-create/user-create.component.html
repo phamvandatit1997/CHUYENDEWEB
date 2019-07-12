@@ -1,0 +1,137 @@
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h2 class="page-header">{{translate.data.user.create.title}}</h2>
+        </div>
+        <form #f2="ngForm" method="post" name="profile" enctype="multipart/form-data">
+          <div class="box-body">
+            <div class="row">
+              <div class="col-sm-6">
+
+                <!-- first name -->
+                <div class="form-group">
+                  <label>{{translate.data.user.create.first_name}}</label>
+                  <input type="text" name="firstName" #firstName="ngModel"
+                         [(ngModel)]="userInfo.firstName" class="form-control" [required]="true"
+                         placeholder="{{translate.data.placeholder.user.first_name}}">
+                  <div *ngIf="firstName.invalid && (firstName.touched ||firstName.dirty)">
+                    <span class="help-block"  style="color: #bd2130;">{{translate.data.error.user.first_name_required}}</span>
+                  </div>
+                </div>
+
+                <!-- user name -->
+                <div class="form-group">
+                  <label>{{translate.data.user.create.username}}</label>
+                  <input type="text" name="userName" #userName="ngModel"
+                         [(ngModel)]="userInfo.userName" class="form-control" [required]="true"
+                         placeholder="{{translate.data.placeholder.user.username}}">
+                  <div *ngIf="userName.invalid && (userName.touched ||userName.dirty)">
+                    <span class="help-block"  style="color: #bd2130;">{{translate.data.error.user.username_required}}</span>
+                  </div>
+                </div>
+
+                <!-- email -->
+                <div class="form-group">
+                  <label>{{translate.data.user.create.email}}</label>
+                  <input type="text" name="email" #email="ngModel"
+                         [(ngModel)]="userInfo.email" class="form-control" [required]="true"
+                         placeholder="{{translate.data.placeholder.user.email}}" [pattern]="emailPattern">
+                  <div *ngIf="email.invalid && (email.touched ||email.dirty)">
+                    <span class="help-block"  style="color: #bd2130;" *ngIf="email.value === ''">{{translate.data.error.user.email_required}}</span>
+                    <span class="help-block"  style="color: #bd2130;" *ngIf="email.errors?.pattern">{{translate.data.error.user.email_validate}}</span>
+                  </div>
+                </div>
+
+                <!-- phone -->
+                <div class="form-group">
+                  <label>{{translate.data.user.create.phone}}</label>
+                  <input type="text" name="phone" #phone="ngModel"
+                         [(ngModel)]="userInfo.phone" class="form-control" [required]="true"
+                         placeholder="{{translate.data.placeholder.user.phone}}">
+                  <div *ngIf="phone.invalid && (phone.touched ||phone.dirty)">
+                    <span class="help-block"  style="color: #bd2130;">{{translate.data.error.user.phone_required}}</span>
+                  </div>
+                </div>
+
+                <!-- birthday -->
+                <div class="form-group">
+                  <label>{{translate.data.user.create.birthday}}</label>
+                  <input type="date" name="birthday" #birthday="ngModel"
+                         [(ngModel)]="userInfo.birthday" class="form-control" [required]="true"
+                         placeholder="{{translate.data.placeholder.user.birthday}}">
+                  <div *ngIf="birthday.invalid && (birthday.touched ||birthday.dirty)">
+                    <span class="help-block"  style="color: #bd2130;">{{translate.data.error.user.birthday_required}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <!-- last name -->
+                <div class="form-group">
+                  <label>{{translate.data.user.create.last_name}}</label>
+                  <input type="text" name="lastName" #lastName="ngModel"
+                         [(ngModel)]="userInfo.lastName" class="form-control" [required]="true"
+                         placeholder="{{translate.data.placeholder.user.last_name}}">
+                  <div *ngIf="lastName.invalid && (lastName.touched ||lastName.dirty)">
+                    <span class="help-block"  style="color: #bd2130;">{{translate.data.error.user.last_name_required}}</span>
+                  </div>
+                </div>
+
+                <!-- address -->
+                <div class="form-group">
+                  <label>{{translate.data.user.create.address}}</label>
+                  <input type="text" name="address" #address="ngModel"
+                         [(ngModel)]="userInfo.address" class="form-control" [required]="true"
+                         placeholder="{{translate.data.placeholder.user.address}}">
+                  <div *ngIf="address.invalid && (address.touched ||address.dirty)">
+                    <span class="help-block"  style="color: #bd2130;">{{translate.data.error.user.address_required}}</span>
+                  </div>
+                </div>
+
+                <!-- password -->
+                <div class="form-group">
+                  <label>{{translate.data.user.create.password}}</label>
+                  <input type="password" name="password" #password="ngModel"
+                         [(ngModel)]="userInfo.password" class="form-control" [required]="true"
+                         placeholder="{{translate.data.placeholder.user.password}}" [minLength]="6">
+                  <div *ngIf="(password.touched ||password.dirty)">
+                    <span class="help-block"  style="color: #bd2130;" *ngIf="password.value===''">{{translate.data.error.user.password_required}}</span>
+                    <span class="help-block" style="color: #bd2130;"
+                          *ngIf="password.value.length>0&&password.value.length <6">{{translate.data.error.user.password_min_length}}</span>
+                  </div>
+                </div>
+
+                <!-- lang -->
+                <div class="form-group">
+                  <label>{{translate.data.user.create.lang}}</label>
+                  <select name="lang" #lang="ngModel" [(ngModel)]="userInfo.lang" class="form-control">
+                    <option value="vi">{{translate.data.placeholder.user.vi}}</option>
+                    <option value="en">{{translate.data.placeholder.user.en}}</option>
+                  </select>
+                </div>
+
+                <!-- hình ảnh -->
+                <div class="form-group">
+                  <img class="img-avatar" src="{{imgUrl?imgUrl:'http://localhost:8080/files/'}}" alt=""
+                       style="width: 100%; height: 250px">
+                  <input type="file" accept="image/*" #file [hidden]="true" (change)="readUrl($event)">
+                  <button class="btn btn-primary" style="margin-top: 0.5rem; width: 100%" (click)="file.click()">{{translate.data.user.create.choose_image}}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group pull-right">
+              <button class="btn btn-success" [disabled]="f2.invalid"
+                      style="margin-right: 10px" (click)="createUser()">{{translate.data.button.save}}</button>
+              <button class="btn btn-warning"
+                      routerLink="/admin/user/list">{{translate.data.button.back}}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,51 @@
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h2 class="page-header">{{translate.data.product_type.create.title_create}}</h2>
+        </div>
+        <form #f2="ngForm" method="post" name="profile" enctype="multipart/form-data">
+          <div class="box-body">
+            <div class="form-group">
+              <label>{{translate.data.product_type.create.product_type_name}}</label>
+              <input type="text" name="productTypeName" #productTypeName="ngModel"
+                     [(ngModel)]="productTypeInfo.productTypeName" class="form-control" [required]="true"
+                     placeholder="{{translate.data.placeholder.product_type.name}}">
+              <div *ngIf="productTypeName.invalid && (productTypeName.touched ||productTypeName.dirty)">
+                <span class="help-block"
+                      style="color: #bd2130;">{{translate.data.error.product_type.name_required}}</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>{{translate.data.product_type.create.description}}</label>
+              <textarea type="text" name="productTypeDescription" #productTypeDescription="ngModel"
+                        [(ngModel)]="productTypeInfo.productTypeDescription" class="form-control" [required]="true"
+                        placeholder="{{translate.data.placeholder.product_type.description}}"
+                        style="height: 300px !important;"></textarea>
+              <div
+                *ngIf="productTypeDescription.invalid && (productTypeDescription.touched ||productTypeDescription.dirty)">
+                <span class="help-block"
+                      style="color: #bd2130;">{{translate.data.error.product_type.description_required}}</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <img class="img-avatar" src="{{imgUrl?imgUrl:'http://localhost:8080/files/'}}" alt=""
+                   style="width: 100%; height: 250px">
+              <input type="file" accept="image/*" #file [hidden]="true" (change)="readUrl($event)">
+              <button class="btn btn-primary" style="margin-top: 0.5rem; width: 100%"
+                      (click)="file.click()">{{translate.data.product_type.create.select_image}}
+              </button>
+            </div>
+            <div class="form-group pull-right">
+              <button class="btn btn-success" [disabled]="f2.invalid" (click)="createProductType()"
+                      style="margin-right: 10px">{{translate.data.button.save}}</button>
+              <button class="btn btn-warning"
+                      routerLink="/admin/product-type/list">{{translate.data.button.back}}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

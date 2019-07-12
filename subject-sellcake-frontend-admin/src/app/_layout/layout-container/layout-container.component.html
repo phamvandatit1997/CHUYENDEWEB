@@ -1,0 +1,152 @@
+<div class="wrapper">
+  <header class="main-header">
+    <a class="logo">
+      <img src="/assets/images/logo.png" class="logo-mini">
+      <img src="/assets/images/logo.png" class="logo-lg">
+    </a>
+    <nav class="navbar navbar-static-top" style="height: 10px">
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"></a>
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown user user-menu" style="margin-right: 10px">
+            <a class="dropdown-toggle" data-toggle="dropdown">
+              <img src="{{user.images}}" class="user-image"><span style="cursor: pointer">{{user.fullName}}</span>
+            </a>
+            <ul class="dropdown-menu" style="margin-top: 13px">
+              <li class="user-footer">
+                <div class="pull-left">
+                  <button class="btn btn-info" data-toggle="modal" data-target="#myModal">Profile</button>
+                </div>
+                <div class="pull-right">
+                  <button class="btn btn-danger" (click)="logoutUser()">Sign out</button>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <aside class="main-sidebar">
+    <section class="sidebar">
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="{{user.images}}" class="user-image">
+        </div>
+        <div class="pull-left info">
+          <p>{{user.fullName}}</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <ul class="sidebar-menu" data-widget="tree">
+        <li>
+          <a [routerLink]="['/admin/dasboard']"><i class="fa fa-circle-o text-aqua"></i>
+            <span> {{translate.data.menu.statistics}}</span></a>
+        </li>
+        <!--product-->
+        <li>
+          <a [routerLink]="['/admin/product/list']"><i class="fa fa-birthday-cake" aria-hidden="true"></i>
+            <span> {{translate.data.menu.manager_cake}}</span></a>
+        </li>
+        <!--product type-->
+        <li>
+          <a [routerLink]="['/admin/product-type/list']"><i class="fa fa-th-list" aria-hidden="true"></i>
+            <span> {{translate.data.menu.manager_type_bakary}}</span></a>
+        </li>
+        <!--bill-->
+        <li>
+          <a [routerLink]="['/admin/bill/list']"><i class="fa fa-wpforms" aria-hidden="true"></i>
+            <span> {{translate.data.menu.bill}}</span></a>
+        </li>
+        <!--customer-->
+        <li>
+          <a [routerLink]="['/admin/customer/list']"><i class="fa fa-id-card-o" aria-hidden="true"></i>
+            <span> {{translate.data.menu.manager_customer}}</span></a>
+        </li>
+        <!--slider-->
+        <li>
+          <a [routerLink]="['/admin/slider/list']"><i class="fa fa-desktop" aria-hidden="true"></i>
+            <span> {{translate.data.menu.slider}}</span></a>
+        </li>
+        <!--user-->
+        <li *ngIf="user.role === 'admin'">
+          <a [routerLink]="['/admin/user/list']"><i class="fa fa-user-circle" aria-hidden="true"></i>
+            <span> {{translate.data.menu.manager_user}}</span></a>
+        </li>
+      </ul>
+    </section>
+  </aside>
+  <div class="content-wrapper">
+    <section class="content">
+      <router-outlet></router-outlet>
+    </section>
+    <!--user profile-->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>{{translate.data.user.information.title_user}}</h3>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="box box-primary">
+                  <div class="box-body box-profile">
+                    <img class="img-circle  profile-user-img"
+                         src="{{user.images}}">
+                    <h3 class="profile-username text-center">{{user.fullName}}</h3>
+                    <p class="text-muted text-left mt-3 ml-3">{{translate.data.user.information.dob}}
+                      : {{user.birthday |date : 'dd-MM-yyy'}}</p>
+                    <p class="text-muted text-left ml-3">{{translate.data.user.information.date_create }}
+                      : {{user.createDate |date : 'dd-MM-yyy'}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="">
+                  <div>
+                    <div class="tab-pane">
+                      <form class="form-horizontal">
+                        <div class="panel panel-success">
+                          <div class="panel-heading">
+                            {{translate.data.user.information.title_contact}}
+                          </div>
+                          <div class="panel-body">
+                            <div class="form-group">
+                              <label class=" control-label">{{translate.data.user.information.email}}
+                                : {{user.email}}</label>
+                            </div>
+                            <div class="form-group">
+                              <label class=" control-label">{{translate.data.user.information.address}}
+                                : {{user.address}}</label>
+                            </div>
+                            <div class="form-group">
+                              <label class=" control-label">{{translate.data.user.information.phone}}
+                                : {{user.phone}}</label>
+                            </div>
+                            <div class="form-group">
+                              <label>{{translate.data.user.create.lang}}</label>
+                              <select  class="form-select">
+                                <option (click)="changeUserLanguage('vi')">{{translate.data.placeholder.user.vi}}</option>
+                                <option (click)="changeUserLanguage('en')">{{translate.data.placeholder.user.en}}</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning"
+                    data-dismiss="modal">{{translate.data.button.close | translate}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
