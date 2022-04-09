@@ -55,7 +55,7 @@
     "jquery-ui-dist": "^1.12.1",
     "jspdf": "^1.5.3",
     "jvectormap": "^1.2.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "morris-js-module": "^1.2.1",
     "mutationobserver-shim": "^0.3.3",
     "ng2-charts": "^1.6.0",
